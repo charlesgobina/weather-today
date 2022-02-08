@@ -5,8 +5,7 @@ import placeReducer from './place/placeReducer';
 import weatherReducer from './weather/weatherReducer';
 
 const reducer = combineReducers({
-  weatherReducer,
-  placeReducer,
+  weatherReducer, placeReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));
