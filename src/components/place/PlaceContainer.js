@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import PlaceList from './PlaceList';
+import AutoForm from '../autoComplete/AutoForm';
 
 const PlaceContainer = () => {
   let cities = useSelector((state) => state.placeReducer);
@@ -10,6 +11,7 @@ const PlaceContainer = () => {
 
   return (
     <div>
+      <AutoForm />
       { cities.map((city) => (
         <PlaceList
           key={uuidv4()}

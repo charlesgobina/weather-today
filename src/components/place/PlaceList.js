@@ -7,16 +7,17 @@ const PlaceList = (props) => {
   const navigate = useNavigate();
 
   return (
-    <button type="button" onClick={() => navigate(`/details/${capital}`)}>
-      <div className="wrapper">
-        <div className="countryInfo">
-          <h1>{capital}</h1>
-          <p>{country}</p>
+    <>
+      <button type="button" onClick={() => navigate(`/details/${capital}`)}>
+        <div className="wrapper">
+          <div className="countryInfo">
+            <h1>{capital}</h1>
+            <p>{country}</p>
+          </div>
+          <p>{iso3}</p>
         </div>
-        <p>{iso3}</p>
-      </div>
-    </button>
-
+      </button>
+    </>
   );
 };
 
