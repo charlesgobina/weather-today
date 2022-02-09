@@ -53,7 +53,6 @@
   letter-spacing: 0.8px;
 }
 
-
 .cardHeader h3 {
   font: normal bolder 1rem 'Poppins', sans-serif;
 }
@@ -143,9 +142,7 @@
 
   .baro {
     width: 60px;
-    size: 60;
   }
-  
 }
 
 @media screen and (min-width: 1300px) {
@@ -153,6 +150,4 @@
     width: 50%;
     padding: 40px;
   }
-  
 }
-
