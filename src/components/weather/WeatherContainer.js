@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import getWeather from '../../redux/weather/thunk';
 import WeatherDetails from './Weatherdetails';
+import Spinner from '../spinners/Spinner';
 import './Weather.css';
 
 const WeatherContainer = () => {
@@ -19,7 +20,7 @@ const WeatherContainer = () => {
 
   return (
     <div className="wrapper">
-      { loading ? <p className="loading">Loading Data . . .</p> : location && current
+      { loading ? <Spinner /> : location && current
         && (
           <WeatherDetails
             name={location.name}

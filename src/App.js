@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import getAllCities from './redux/place/thunk';
 import PlaceContainer from './components/place/PlaceContainer';
 import WeatherContainer from './components/weather/WeatherContainer';
+import Header from './components/header/Header';
 import './App.css';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <>
+      <Header />
       <Routes>
         <Route path="/" element={<PlaceContainer />} />
         <Route path="/details/:city" element={<WeatherContainer />} />

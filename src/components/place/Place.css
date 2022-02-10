@@ -1,0 +1,76 @@
+.locationCard {
+  color: rgb(255, 255, 255);
+  box-shadow: 1px 5px 10px;
+  outline: none;
+  border: none;
+  padding: 0 5px;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom right, rgb(231, 161, 161), rgba(138, 10, 80, 0.829));
+  background-size: cover;
+  transform: scale(1, 1);
+  transition: all 0.8s;
+}
+
+.locationCard:hover {
+  background-image: url('../../../public/mount.jpg');
+  transform: scale(0.8, 0.8);
+}
+
+.capital {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin: 0 10px;
+  gap: 5px;
+}
+
+.capital .indiCap button {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.locName {
+  font: normal bold 1.2rem 'Poppins', sans-serif;
+}
+
+.locRegion {
+  font: normal bold 0.8rem 'Poppins', sans-serif;
+}
+
+.locCoun {
+  font: normal bold 0.9rem 'Poppins', sans-serif;
+}
+
+.helper .suggestions {
+  text-align: center;
+  font: normal bold 1.5rem 'Poppins', sans-serif;
+  padding-top: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .capital {
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+    margin: 0 10px;
+    gap: 5px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .capital {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    margin: 0 100px;
+    gap: 5px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .capital {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    margin: 0 150px;
+    gap: 5px;
+  }
+}
