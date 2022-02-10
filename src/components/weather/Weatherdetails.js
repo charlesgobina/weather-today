@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import * as wi from 'weather-icons-react';
 import PropTypes from 'prop-types';
-import { BiDirections } from 'react-icons/bi';
+import {
+  BiDirections, BiBrightness, BiChevronLeft, BiChevronRight,
+} from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 import { dayImages, nightImages } from './WeatherImages';
 import './Weather.css';
 
@@ -23,6 +27,7 @@ const WeatherDetails = (props) => {
     nightHolder = nightHolder.join('').toString();
   }
 
+  const navigate = useNavigate();
   const [baro] = useState(pressureMb);
   const [temp] = useState(tempCelcius);
   const [prep] = useState(precipitation);
@@ -36,6 +41,31 @@ const WeatherDetails = (props) => {
 
   return (
     <div>
+      <div className="controlMenu">
+        <ul className="controls">
+          <li>
+            <button className="controlBtn oneBtn" type="button">
+              <BiChevronLeft
+                onClick={() => navigate('/')}
+                data-for="main"
+                data-tip="Go back"
+                size={40}
+              />
+            </button>
+          </li>
+          <li>
+            <button className="controlBtn twoBtn" type="button">
+              <BiChevronRight size={40} />
+            </button>
+          </li>
+          <li>
+            <button className="controlBtn threeBtn" type="button">
+              <BiBrightness data-for="main" data-tip="Dark Mode" size={40} />
+            </button>
+          </li>
+        </ul>
+        <ul />
+      </div>
       <div className="card">
         <div className="cardHeader">
           <img
@@ -91,6 +121,8 @@ const WeatherDetails = (props) => {
                     : orangeStyle}
                   size={50}
                   className="baro"
+                  data-tip="Pressure"
+                  data-for="main"
                 />
                 {' '}
                 <p>
@@ -105,6 +137,8 @@ const WeatherDetails = (props) => {
                     : orangeStyle}
                   size={50}
                   className="baro"
+                  data-tip="Temperature"
+                  data-for="main"
                 />
                 {' '}
                 <p>
@@ -114,7 +148,7 @@ const WeatherDetails = (props) => {
                 </p>
               </li>
               <li>
-                <wi.WiCloud size={50} className="baro" />
+                <wi.WiCloud size={50} className="baro" data-for="main" data-tip="Cloud coverage" />
                 {' '}
                 <p>
                   {cloud}
@@ -127,6 +161,8 @@ const WeatherDetails = (props) => {
                     : orangeStyle}
                   size={50}
                   className="baro"
+                  data-tip="Humidity"
+                  data-for="main"
                 />
                 {' '}
                 <p>
@@ -135,7 +171,7 @@ const WeatherDetails = (props) => {
                 </p>
               </li>
               <li>
-                <BiDirections className="bxDir baro" size={40} />
+                <BiDirections className="bxDir baro" data-for="main" data-tip="Wind direction" size={40} />
                 {' '}
                 <p>{windDir}</p>
               </li>
@@ -145,6 +181,8 @@ const WeatherDetails = (props) => {
                     : orangeStyle}
                   size={50}
                   className="baro"
+                  data-tip="Precipitation"
+                  data-for="main"
                 />
                 {' '}
                 <p>
@@ -158,6 +196,13 @@ const WeatherDetails = (props) => {
 
         </div>
       </div>
+      <ReactTooltip
+        id="main"
+        place="top"
+        type="light"
+        effect="float"
+        multiline={false}
+      />
     </div>
 
   );
