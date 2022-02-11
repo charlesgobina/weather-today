@@ -1,0 +1,66 @@
+.appName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.appName h1 {
+  font: normal bold 1.5rem 'Zilla Slab', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.onlyOne {
+  display: flex;
+  align-items: center;
+}
+
+.onlyOne li {
+  margin-top: 5px;
+}
+
+.spinningGear {
+  color: #cf7d90;
+  cursor: not-allowed;
+  animation-name: rotate-s-loader;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+.microphone {
+  cursor: not-allowed;
+}
+
+@keyframes rotate-s-loader {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .appName {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .appName {
+    margin: 0 100px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .appName {
+    margin: 0 150px;
+  }
+}

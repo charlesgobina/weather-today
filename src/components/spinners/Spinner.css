@@ -1,0 +1,41 @@
+.spinningGear {
+  animation-name: rotate-s-loader;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+@keyframes rotate-s-loader {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.antiSpin {
+  animation-name: rotate-t-loader;
+  animation-iteration-count: infinite;
+  animation-duration: 11s;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+@keyframes rotate-t-loader {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+.spinners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
