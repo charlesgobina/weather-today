@@ -4,7 +4,10 @@ Weather-Today is a web application that enables users to get information about t
 ![](./public/home.png)
 ![](./public/details.png)
 
-# Live Demo
+## Video presentation
+[Video](https://www.loom.com/share/c168cf8638084c2996c22fd6694ed215)
+
+## Live Demo
 [Live Link](/)
 
 ## Technologies Used
