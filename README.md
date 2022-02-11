@@ -1,4 +1,4 @@
-# BookStore
+# Weather-Today
 Weather-Today is a web application that enables users to get information about the weather condition of different areas around the world. Once the app is opened, users are presented with a homepage that shows suggested locations. There's also a seach bar that allows users to search for places, including countries, cities, regions and even suburbs. Its built using React
 
 ![](./public/home.png)
@@ -8,7 +8,7 @@ Weather-Today is a web application that enables users to get information about t
 [Video](https://www.loom.com/share/c168cf8638084c2996c22fd6694ed215)
 
 ## Live Demo
-[Live Link](/)
+[Live Link](https://mcrvs-weather.netlify.app/)
 
 ## Technologies Used
 * Languages (JSX, CSS)
