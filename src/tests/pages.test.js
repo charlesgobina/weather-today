@@ -5,7 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../redux/configureStore';
 import PlaceContainer from '../components/place/PlaceContainer';
 import WeatherContainer from '../components/weather/WeatherContainer';
-import App from '../App'
+import Header from '../components/header/Header';
+import Spinner from '../components/spinners/Spinner';
+import App from '../App';
 
 describe('Testing if App renders correctly', () => {
   test('Testing home page', () => {
@@ -25,8 +27,8 @@ describe('Testing if pages render correctly', () => {
         <Provider store={store}>
           <PlaceContainer />
         </Provider>
-      </Router>
-      
+      </Router>,
+
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -39,8 +41,26 @@ describe('Testing if pages render correctly', () => {
         <Provider store={store}>
           <WeatherContainer />
         </Provider>
-      </Router>
-      
+      </Router>,
+
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('Testing if pages render correctly', () => {
+  test('Testing Header', () => {
+    const tree = renderer.create(
+      <Header />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('Testing if pages render correctly', () => {
+  test('Testing Spinners', () => {
+    const tree = renderer.create(
+      <Spinner />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

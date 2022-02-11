@@ -3,12 +3,12 @@ const cities = () => Promise.resolve({
     {
       name: 'Afganistan',
       capital: 'Kabul',
-      iso3: 'AFG'
+      iso3: 'AFG',
     },
     {
       name: 'Brazil',
       capital: 'Brasilia',
-      iso3: 'BRA'
+      iso3: 'BRA',
     },
   ],
 });
