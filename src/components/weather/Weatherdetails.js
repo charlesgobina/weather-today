@@ -1,31 +1,21 @@
 import React, { useState } from 'react';
-import * as wi from 'weather-icons-react';
+import {
+  WiBarometer, WiThermometer, WiCloud, WiRaindrop, WiHumidity,
+} from 'react-icons/wi';
 import PropTypes from 'prop-types';
 import {
   BiDirections, BiBrightness, BiChevronLeft, BiChevronRight,
 } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
-import { dayImages, nightImages } from './WeatherImages';
+import icon from '../images/day/179.png';
 import './Weather.css';
 
 const WeatherDetails = (props) => {
   const {
-    name, country, time, lon, lat, conditionDesc, precipitation, isDay,
-    lastUpdate, conditionImg, pressureMb, windDir, cloud, humidity, tempCelcius,
+    name, country, time, lon, lat, conditionDesc, precipitation,
+    lastUpdate, pressureMb, windDir, cloud, humidity, tempCelcius,
   } = props;
-  let placeHolder = conditionImg;
-  let nightHolder;
-  if (placeHolder.includes('day')) {
-    placeHolder = Array.from(conditionImg);
-    placeHolder.splice(0, 39);
-    placeHolder = placeHolder.join('').toString();
-  } else {
-    placeHolder = Array.from(conditionImg);
-    placeHolder.splice(0, 41);
-    nightHolder = placeHolder;
-    nightHolder = nightHolder.join('').toString();
-  }
 
   const navigate = useNavigate();
   const [baro] = useState(pressureMb);
@@ -69,9 +59,7 @@ const WeatherDetails = (props) => {
       <div className="card">
         <div className="cardHeader">
           <img
-            style={{ width: '100px', height: 'auto' }}
-            src={isDay === 0 ? nightImages[nightHolder]
-              : dayImages[placeHolder]}
+            src={icon}
             alt="logo"
           />
           <h3>
@@ -116,7 +104,7 @@ const WeatherDetails = (props) => {
             <h3>Weather Parameters</h3>
             <ul>
               <li>
-                <wi.WiBarometer
+                <WiBarometer
                   style={baro >= 29.6 && baro <= 30.2 ? blueStyle
                     : orangeStyle}
                   size={50}
@@ -132,7 +120,7 @@ const WeatherDetails = (props) => {
                 </p>
               </li>
               <li>
-                <wi.WiThermometer
+                <WiThermometer
                   style={temp >= 20 && temp <= 33 ? blueStyle
                     : orangeStyle}
                   size={50}
@@ -148,7 +136,7 @@ const WeatherDetails = (props) => {
                 </p>
               </li>
               <li>
-                <wi.WiCloud size={50} className="baro" data-for="main" data-tip="Cloud coverage" />
+                <WiCloud size={50} className="baro" data-for="main" data-tip="Cloud coverage" />
                 {' '}
                 <p>
                   {cloud}
@@ -156,7 +144,7 @@ const WeatherDetails = (props) => {
                 </p>
               </li>
               <li>
-                <wi.WiHumidity
+                <WiHumidity
                   style={hum >= 30 && hum <= 50 ? blueStyle
                     : orangeStyle}
                   size={50}
@@ -176,7 +164,7 @@ const WeatherDetails = (props) => {
                 <p>{windDir}</p>
               </li>
               <li>
-                <wi.WiRaindrop
+                <WiRaindrop
                   style={prep >= 0.10 && prep <= 0.30 ? blueStyle
                     : orangeStyle}
                   size={50}
@@ -221,9 +209,7 @@ WeatherDetails.propTypes = {
   windDir: PropTypes.string.isRequired,
   cloud: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
-  conditionImg: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
-  isDay: PropTypes.number.isRequired,
 };
 
 export default WeatherDetails;

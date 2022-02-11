@@ -28,10 +28,8 @@ const WeatherContainer = () => {
             lon={location.lon}
             lat={location.lat}
             conditionDesc={current.condition.text}
-            conditionImg={current.condition.icon}
             precipitation={current.precip_in}
             lastUpdate={current.last_updated}
-            isDay={current.is_day}
             pressureMb={current.pressure_in}
             tempCelcius={current.temp_c}
             cloud={current.cloud}
