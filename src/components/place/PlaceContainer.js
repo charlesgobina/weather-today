@@ -6,7 +6,7 @@ import AutoForm from '../autoComplete/AutoForm';
 
 const PlaceContainer = () => {
   let cities = useSelector((state) => state.placeReducer);
-  cities = cities.splice(Math.floor(Math.random() * 10), 15);
+  cities = cities.splice(Math.floor(Math.random() * 10), 20);
   cities = cities.filter((city) => city.capital !== '');
 
   return (
